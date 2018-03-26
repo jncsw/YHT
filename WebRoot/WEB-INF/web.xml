@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name></display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>servlet.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetLabelList</servlet-name>
+    <servlet-class>servlet.GetLabelList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddLabel</servlet-name>
+    <servlet-class>servlet.AddLabel</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>servlet.Register</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteLabel</servlet-name>
+    <servlet-class>servlet.DeleteLabel</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EditLabel</servlet-name>
+    <servlet-class>servlet.EditLabel</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TakePlace</servlet-name>
+    <servlet-class>servlet.TakePlace</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Cancel</servlet-name>
+    <servlet-class>servlet.Cancel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetLabelList</servlet-name>
+    <url-pattern>/GetLabelList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddLabel</servlet-name>
+    <url-pattern>/AddLabel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteLabel</servlet-name>
+    <url-pattern>/DeleteLabel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EditLabel</servlet-name>
+    <url-pattern>/EditLabel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TakePlace</servlet-name>
+    <url-pattern>/TakePlace</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Cancel</servlet-name>
+    <url-pattern>/Cancel</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Quit</servlet-name>
+    <servlet-class>servlet.Quits</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetUser</servlet-name>
+    <servlet-class>servlet.GetUser</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetLabelById</servlet-name>
+    <servlet-class>servlet.GetLabelById</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetJoinedLabel</servlet-name>
+    <servlet-class>servlet.GetJoinedLabel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Quit</servlet-name>
+    <url-pattern>/Quit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetUser</servlet-name>
+    <url-pattern>/GetUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetLabelById</servlet-name>
+    <url-pattern>/GetLabelById</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetJoinedLabel</servlet-name>
+    <url-pattern>/GetJoinedLabel</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GetMyLabel</servlet-name>
+    <servlet-class>servlet.GetMyLabel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetMyLabel</servlet-name>
+    <url-pattern>/GetMyLabel</url-pattern>
+  </servlet-mapping>
+</web-app>

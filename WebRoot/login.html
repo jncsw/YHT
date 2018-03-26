@@ -1,0 +1,450 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+		function encrypt(){
+			x=document.getElementById("password");
+			y=document.getElementById("password2");
+			y.value=hex_md5(x.value);
+		}
+		
+function login()
+{
+	encrypt();
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		var xml=JSON.parse(xmlhttp.responseText);
+   		
+   		document.getElementById('text').value=xml.errcode;
+   		
+   	};
+	xmlhttp.open("POST","Login",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+	
+  	var str1=document.getElementById("username");
+	var str2=document.getElementById("password2");
+	
+	var str = "username="+str1.value+"&password2="+str2.value;
+	alert(str);
+	xmlhttp.send(str);
+	
+}
+function quit()
+{
+	encrypt();
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","Quit",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+	var str = "";
+	
+	xmlhttp.send(str);
+	
+}
+function register()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","Register",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+	
+  	var str1=document.getElementById("username_r");
+	var str2=document.getElementById("password_r");
+	var str3=document.getElementById("real_name");
+	var str4=document.getElementById("email");
+	var str5=document.getElementById("phone_number");
+	var str6=document.getElementById("intro");
+	
+	
+	var str = "username="+str1.value
+			+"&password="+str2.value
+			+"&real_name="+str3.value
+			+"&email="+str4.value
+			+"&phone_number="+str5.value
+			+"&intro="+str6.value;
+	
+	xmlhttp.send(str);
+	
+}
+function getUser()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","GetUser",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+	
+  	var str1=document.getElementById("user_id");
+	
+	var str = "id="+str1.value;
+	
+	xmlhttp.send(str);
+	
+}
+
+function addLabel()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","AddLabel",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+  	var str1=document.getElementById("kind");
+	var str2=document.getElementById("joining_limit");
+	var str3=document.getElementById("place");
+	var str4=document.getElementById("start_time");
+	var str5=document.getElementById("end_time");
+	var str6=document.getElementById("locationX");
+	var str7=document.getElementById("locationY");
+	var str8=document.getElementById("title");
+	var str9=document.getElementById("intro_l");
+	
+	var str = "kind="+str1.value
+			+"&joining_limit="+str2.value
+			+"&place="+str3.value
+			+"&start_time="+str4.value
+			+"&end_time="+str5.value
+			+"&locationX="+str6.value
+			+"&locationY="+str7.value
+			+"&title="+str8.value
+			+"&intro="+str9.value;
+	
+	xmlhttp.send(str);
+	
+}
+function delete_label()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","DeleteLabel",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+	
+  	var str1=document.getElementById("label_id");
+	
+	var str = "id="+str1.value;
+	
+	xmlhttp.send(str);
+	
+}
+function getLabelList()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","GetLabelList",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+  	var str1=document.getElementById("kind_l");
+	var str2=document.getElementById("locationX_l");
+	var str3=document.getElementById("locationY_l");
+	var str4=document.getElementById("distance");
+	var str5=document.getElementById("start_time_g");
+	var str6=document.getElementById("end_time_g");
+	
+	
+	var str = "kind="+str1.value
+			+"&locationX="+str2.value
+			+"&locationY="+str3.value
+			+"&distance="+str4.value
+			+"&start_time="+str5.value
+			+"&end_time="+str6.value;
+	
+	xmlhttp.send(str);
+	
+}
+function editLabel()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","EditLabel",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+  	var str1=document.getElementById("kind_e");
+	var str2=document.getElementById("joining_limit_e");
+	var str3=document.getElementById("place_e");
+	var str4=document.getElementById("start_time_e");
+	var str5=document.getElementById("end_time_e");
+	var str6=document.getElementById("locationX_e");
+	var str7=document.getElementById("locationY_e");
+	var str8=document.getElementById("label_id_e");
+	
+	var str = "kind="+str1.value
+			+"&joining_limit="+str2.value
+			+"&place="+str3.value
+			+"&start_time="+str4.value
+			+"&end_time="+str5.value
+			+"&locationX="+str6.value
+			+"&locationY="+str7.value
+			+"&id="+str8.value;
+	
+	xmlhttp.send(str);
+	
+}
+function getLabel()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","GetLabelById",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+	
+  	var str1=document.getElementById("label_id_g");
+	
+	var str = "id="+str1.value;
+	
+	xmlhttp.send(str);
+	
+}
+
+function takePlace()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","TakePlace",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+  	var str1=document.getElementById("label_id_t");
+	
+	var str = "id="+str1.value;
+	
+	xmlhttp.send(str);
+	
+}
+function cancel()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","Cancel",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+  	var str1=document.getElementById("label_id_c");
+	
+	var str = "id="+str1.value;
+	
+	xmlhttp.send(str);
+	
+}
+function getJoined()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","GetJoinedLabel",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+	
+	var str = "";
+	
+	xmlhttp.send(str);
+	
+}
+function getMine()
+{
+  	var xmlhttp = new XMLHttpRequest();
+  	
+   	xmlhttp.onreadystatechange=function(){
+   		document.getElementById('text').value=xmlhttp.responseText;
+   		
+   	};
+	xmlhttp.open("POST","GetMyLabel",false);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	
+	
+	var str = "";
+	
+	xmlhttp.send(str);
+	
+}
+
+
+</script>
+<script src="scripts/MD5.js"></script>
+</head>
+
+<body>
+<div style="position:fixed"><textArea id="text" value="结果在这里显示"></textArea></div>
+
+<br><br><br>
+
+		<br>
+		------------------------------
+		<br>
+		<div>用户名</div>
+		<input type="text" name="username" id="username">
+		<div>密码：</div>
+		<input type="password" name="password" id="password">
+		<input type="hidden" name="password2" id="password2">
+		<input class="log_submit" type="submit" onclick="login();" value="登&nbsp;录"> <span id="alarm_empty"></span>
+		<input class="log_submit" type="submit" onclick="quit();" value="退&nbsp;出"> <span id="alarm_empty"></span>
+		<br><br>
+		------------------------------
+		<br>
+		<div>用户名</div>
+		<input type="text" name="username" id="username_r">
+		<div>密码：</div>
+		<input type="text" name="password" id="password_r">
+		<div>真名：</div>
+		<input type="text" name="password" id="real_name">
+		<div>邮箱：</div>
+		<input type="text" name="password" id="email">
+		<div>电话号码：</div>
+		<input type="text" name="password" id="phone_number">
+		<div>个人简介：</div>
+		<input type="text" name="password" id="intro">
+		<input class="log_submit" type="submit" onclick="register();" value="注&nbsp;册"> <span id="alarm_empty"></span>
+		<br><br>
+		------------------------------
+		<br>
+		<div>用户id</div>
+		<input type="text" name="username" id="user_id">
+		<input class="log_submit" type="submit" onclick=" getUser();" value="获取用户信息"> <span id="alarm_empty"></span>
+		
+		<br><br>
+		------------------------------
+		<br>
+		<div>标签标题</div>
+		<input type="text" name="password" id="title">
+		<div>标签简介</div>
+		<input type="text" name="password" id="intro_l">
+		<div>种类(1-6)</div>
+		<input type="text" name="username" id="kind">
+		<div>参加人数上限(int)</div>
+		<input type="text" name="password" id="joining_limit">
+		<div>地点(String)</div>
+		<input type="text" name="password" id="place">
+		<div>开始时间(long)</div>
+		<input type="text" name="password" id="start_time">
+		<div>结束时间(long)</div>
+		<input type="text" name="password" id="end_time">
+		<div>坐标x(double)</div>
+		<input type="text" name="password" id="locationX">
+		<div>坐标y(double)</div>
+		<input type="text" name="password" id="locationY">
+		<input class="log_submit" type="submit" onclick=" addLabel();" value="添加标签"> <span id="alarm_empty"></span>
+		
+		<br><br>
+		------------------------------
+		<br>
+		<div>标签id:</div>
+		<input type="text" name="username" id="label_id">
+		<input class="log_submit" type="submit" onclick=" delete_label();" value="删除标签"> <span id="alarm_empty"></span>
+		
+		<br><br>
+		------------------------------
+		<br>
+		<div>种类(1-6)</div>
+		<input type="text" name="username" id="kind_l">
+		<div>坐标x</div>
+		<input type="text" name="password" id="locationX_l">
+		<div>坐标y</div>
+		<input type="text" name="password" id="locationY_l">
+		<div>距离(double 坐标距离)</div>
+		<input type="text" name="password" id="distance">
+		<div>起始时间(long)</div>
+		<input type="text" name="password" id="start_time_g">
+		<div>结束时间(long)</div>
+		<input type="text" name="password" id="end_time_g">
+		<input class="log_submit" type="submit" onclick=" getLabelList();" value="查询标签"> <span id="alarm_empty"></span>
+		
+		<br><br>
+		------------------------------
+		<br>
+		<div>标签id</div>
+		<input type="text" name="username" id="label_id_e">
+		<div>种类(1-6)</div>
+		<input type="text" name="username" id="kind_e">
+		<div>参加人数上限(int)</div>
+		<input type="text" name="password" id="joining_limit_e">
+		<div>地点(String)</div>
+		<input type="text" name="password" id="place_e">
+		<div>开始时间(long)</div>
+		<input type="text" name="password" id="start_time_e">
+		<div>结束时间(long)</div>
+		<input type="text" name="password" id="end_time_e">
+		<div>坐标x(double)</div>
+		<input type="text" name="password" id="locationX_e">
+		<div>坐标y(double)</div>
+		<input type="text" name="password" id="locationY_e">
+		<input class="log_submit" type="submit" onclick=" editLabel();" value="编辑标签"> <span id="alarm_empty"></span>
+		
+		<br><br>
+		------------------------------
+		<br>
+		<div>标签id</div>
+		<input type="text" name="username" id="label_id_g">
+		<input class="log_submit" type="submit" onclick=" getLabel();" value="获取标签信息"> <span id="alarm_empty"></span>
+		<br><br>
+		------------------------------
+		<br>
+		<div>标签id</div>
+		<input type="text" name="username" id="label_id_t">
+		<input class="log_submit" type="submit" onclick=" takePlace();" value="参加"> <span id="alarm_empty"></span>
+		<br><br>
+		------------------------------
+		<br>
+		<div>标签id</div>
+		<input type="text" name="username" id="label_id_c">
+		<input class="log_submit" type="submit" onclick=" cancel();" value="取消参加"> <span id="alarm_empty"></span>
+		
+		<br><br>
+		------------------------------
+		<br>
+		<input class="log_submit" type="submit" onclick=" getJoined();" value="获得已参加标签"> <span id="alarm_empty"></span>
+		<br><br>
+		------------------------------
+		<br>
+		<input class="log_submit" type="submit" onclick=" getMine();" value="获得自己创建的标签"> <span id="alarm_empty"></span>
+		
+		
+		
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

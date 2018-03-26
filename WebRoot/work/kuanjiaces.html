@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="text-css.css">
+<link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://webapi.amap.com/maps?v=1.3&key=c915ee7c33bba3f51211f1e61c897ca0&callback=init"></script>
+</head>
+<body>
+    <div id="ddsdp">
+        
+    </div>
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script> 
+
+<script type="text/javascript" src = "text-scr.js"></script> 
+</body>
+</html>
+<!-- <!DOCTYPE HMTL>  
+<html>  
+    <head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+    <title>百度API开发实例</title>  
+<script type="text/javascript">  
+    function initialize() {  
+        var mp = new BMap.Map('map', { mapType: BMAP_HYBRID_MAP }); //创建地图实例  {mapType: BMAP_HYBRID_MAP}为设置默认的为卫星地图  
+        mp.centerAndZoom(new BMap.Point(121.427, 31.131), 20); //后面的20为设置默认地图缩放比例  
+         
+        //控制控件的位置,anchor:表示停靠在地图的哪个脚，offset指定偏移量，离地图边界相隔多少像素  
+        //BMAP_ANCHOR_TOP_LEFT详见百度API说明  
+        var opts = { anchor: BMAP_ANCHOR_TOP_LEFT, offset: new BMap.Size(10, 10) };  
+        mp.addControl(new BMap.NavigationControl(opts));  //缩放控件  
+        mp.addControl(new BMap.ScaleControl());   //比例尺控件  
+        mp.addControl(new BMap.OverviewMapControl());  //小地图  
+        mp.addControl(new BMap.MapTypeControl()); //地图类型（地图、卫星、三维）  
+  
+        mp.enableScrollWheelZoom(); //启用滚轮进行缩放  
+  
+        var marker = new BMap.Marker( new BMap.Point(121.427, 31.131)); //创建标注  
+        mp.addOverlay(marker); //将标注添加到地图中  
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画  
+        marker.enableDragging();  //标注可拖拽，默认不可  
+  
+        //监听标注拖拽位置事件  
+        marker.addEventListener("dragend", function (e) {  
+            alert("当前位置:" + e.point.lng + "," + e.point.lat); //表示经纬度  
+        });  
+  
+        //移除标注  
+        marker.addEventListener("click", function () {  
+            alert("ajax与数据库连接操作");  
+            mp.removeOverlay(marker);  
+        });  
+  
+        //设置带文字标签  
+        var label = new BMap.Label("请点击我", { offset: new BMap.Size(20, -10) });  
+        marker.setLabel(label);  
+  
+        //信息窗口  
+        var opts = { width: 50, height: 10, title: "hello" }; //信息窗口  
+        var infoWindow = new BMap.InfoWindow("world", opts); //创建信息窗口对象  
+        marker.openInfoWindow(infoWindow);  //自动打开信息窗口  
+        //marker.addEventListener("mouseover", function () { this.openInfoWindow(infoWindow); });  //当鼠标移到标注时，打开信箱窗口口  
+  
+        // 随机向地图添加10个标注  
+        var bounds = mp.getBounds();  
+        var sw = bounds.getSouthWest();   
+        var ne = bounds.getNorthEast();  
+        var lngSpan = Math.abs(sw.lng - ne.lng);  
+        var latSpan = Math.abs(ne.lat - sw.lat);  
+        for (var i = 0; i < 10; i++) {  
+            var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));  
+            addMarker("mark_"+i,point);  
+        }  
+        // 编写自定义函数,创建标注  
+        function addMarker(markName,point) {  
+            var markName = new BMap.Marker(point);  
+            mp.addOverlay(markName);  
+            markName.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画  
+            //信息窗口  
+            var label = new BMap.Label("警告:有人入侵!", { offset: new BMap.Size(20, -10) });  
+            markName.setLabel(label);  
+            //移除标注  
+            markName.addEventListener("click", function () {  
+                mp.removeOverlay(markName);  
+            });  
+        }  
+    }  
+  
+    //下面是对地图的一些操作，等待两秒钟后，它会移动到新的中心点  
+    // window.setTimeout(function(){  
+    //map.panTo(new BMap.Point(116.409,39.918));  
+    // },2000);  
+  
+    function loadScript() {  
+        var script = document.createElement("script");  
+        script.src = "http://api.map.baidu.com/api?v=2.0&ak=pII0NGsfurPK6Xfx0cSSwa6EtesLKOrP&callback=initialize";   
+        document.body.appendChild(script);  
+    }  
+  
+    window.onload = loadScript;  
+</script>    
+</head>  
+  
+<body>  
+<div id="map" style="width:920px;height:520px"></div>    
+</body>  
+</html>   -->
